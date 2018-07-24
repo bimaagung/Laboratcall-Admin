@@ -6,8 +6,8 @@ class Page_alumni extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("m_alumnus");
-		$this->load->model("m_secure");
-		$this->m_secure->secure();
+		// $this->load->model("m_secure");
+		// $this->m_secure->secure();
 	}
 
 	function index()
