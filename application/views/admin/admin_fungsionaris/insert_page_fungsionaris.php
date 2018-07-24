@@ -1,7 +1,7 @@
 <style type="text/css">
     img{
-        max-width:300px;
-        max-height: 300px;
+        max-width:150px;
+        max-height: 150px;
     }
     input[type=file]{
         padding:10px;
@@ -18,8 +18,8 @@
     }
 
     .image_profil{
-        width: 200px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
     </style>
 
@@ -49,44 +49,19 @@
     <!-- block -->
     <div class="block">
       <div class="navbar navbar-inner block-header">
-        <div class="muted pull-left"><?php echo $labelfungsionaris;?></div>
+        <div class="muted pull-left"></div>
       </div>
       <div class="block-content collapse in">
         <div class="span12">
           <form  method="post" action="<?php echo base_url();?>index.php/admin/page_fungsionaris/save_fungsionaris" enctype="multipart/form-data" class="form-horizontal">
             <fieldset>
-              <div class="control-group" style="margin-top:50px;" align="center">
-                        <?php
-                            if($foto == ''){
-                        ?>
-                                <img id="blah"/>
-                                <img id="viewupdate" src="<?php echo base_url(); ?>assets/images/blankimage.png" class="image_profil"/>
-                                <br>
-                                <div class="col-lg-12 col-sm-12 col-12">
-                                  <label class="btn btn-default" style="width:19.2%;">
-                                      Pilih Foto&hellip; <input type="file" style="display: none;" name="foto" onchange="readURL(this);">
-                                  </label>
-                                </div>
-                        <?php
-                            }else{
-                        ?>
-                                <img id="blah"/> 
-                                <img id="viewupdate" src="<?php echo base_url(); ?>assets/img/<?php echo $foto ?>" class="image_profil"/> 
-                                <br>
-                                <div class="col-lg-12 col-sm-12 col-12">
-                                  <label class="btn btn-default" style="width:19.2%;">
-                                      Pilih Foto&hellip; <input type="file" style="display: none;" name="foto" onchange="readURL(this);">
-                                  </label>
-                                </div>
-
-
-                        <?php
-                            }
-                         ?>    
-              </div>
-              <hr>
+            <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Insert Data Fungsionaris</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
               <div class="control-group">
-                <label class="control-label" for="typeahead">Nama Lengkap</label>
+                <label class="control-label" for="typeahead">* Nama Lengkap</label>
                 <div class="controls">
                   <input type="text" name="nama" id="typeahead" value="<?php echo $nama?>" required>
                   <input type="text" class="hidden" name="id" value="<?php echo $id?>">
@@ -94,7 +69,7 @@
               </div>
               <hr>
               <div class="control-group">
-                <label class="control-label" for="typeahead">NIM</label>
+                <label class="control-label" for="typeahead">* NIM</label>
                 <div class="controls">
                   <input type="number" name="nim" id="typeahead" value="<?php echo $nim?>" required>
                 </div>
@@ -220,10 +195,40 @@
                   <textarea name="pesan" class="input-xlarge textarea" required placeholder="Enter text ..." style="width: 65%; height: 80px"><?php echo $pesan?></textarea>
                 </div>
               </div>
+              <div class="control-group" style="margin-top:20px; margin-left:180px;" align="left">
+                        <?php
+                            if($foto == ''){
+                        ?>
+                                <img id="blah"/>
+                                <img id="viewupdate" src="<?php echo base_url(); ?>assets/images/blankimage.png" class="image_profil"/>
+                                <br>
+                                <div class="col-lg-12 col-sm-12 col-12">
+                                  <label class="btn btn-default" style=" margin-top:2%;">
+                                      Pilih Foto&hellip; <input type="file" style="display: none;" name="foto" onchange="readURL(this);">
+                                  </label>
+                                </div>
+                        <?php
+                            }else{
+                        ?>
+                                <img id="blah"/> 
+                                <img id="viewupdate" src="<?php echo base_url(); ?>assets/img/<?php echo $foto ?>" class="image_profil"/> 
+                                <br>
+                                <div class="col-lg-12 col-sm-12 col-12">
+                                  <label class="btn btn-default" style="margin-top:2%;">
+                                      Pilih Foto&hellip; <input type="file" style="display: none;" name="foto" onchange="readURL(this);">
+                                  </label>
+                                </div>
+
+
+                        <?php
+                            }
+                         ?>    
+              </div>
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <button type="reset" class="btn" onclick="window.location='http://localhost/silari/index.php/admin/page_fungsionaris'">Kembali</button>
               </div>
+            
             </fieldset>
           </form>
 
