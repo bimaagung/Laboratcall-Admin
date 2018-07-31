@@ -27,7 +27,7 @@
                      <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="#">Admin [ SILARI ] <span style="font-size:16px;">Sistem Alumni Riptek</span></a>
-                    <div class="nav-collapse collapse">
+                    <div class="nav-collapse collapse"> 
                         <ul class="nav pull-right">
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i>

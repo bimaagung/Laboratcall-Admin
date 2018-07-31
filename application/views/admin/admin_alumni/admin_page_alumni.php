@@ -17,7 +17,7 @@
        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data_alumnus">
         <thead>
           <tr align="center">
-            <th style="text-align:center;">NIM</th>
+            <th style="text-align:center; width:8%;">No</th>
             <th style="text-align:center;">Nama</th>
             <th style="text-align:center; width:20%;">Tahun Masuk Riptek</th>
             <th style="text-align:center;">Bidang di Riptek</th>
@@ -96,11 +96,11 @@
               var i;
               for(i=0; i<data.length; i++){
                 html += '<tr>'+
-                '<td>'+data[i].nim+'</td>'+ 
+                '<td>'+i+'</td>'+ 
                 // '<td style="text-align:center;">'+ (i+1) +'</td>'+
                 '<td>'+data[i].nama+'</td>'+
-                '<td style="text-align:center;">'+data[i].thn_masuk+'</td>'+
-                '<td style="text-align:center;">'+data[i].posisiriptek+'</td>'+ 
+                '<td style="text-align:center;">'+data[i].angkatan+'</td>'+
+                '<td style="text-align:center;">'+data[i].bidang+'</td>'+ 
                 '<td style="text-align:center;">'+
                 // '<a href="javascript:void(0);" class="btn view_alumnus" data="'+data[i].id+'">View</a>'+' '+
                 '<a href="<?php echo base_url();?>index.php/admin/page_alumni/insert_alumnus/'+data[i].id+'" class="btn" >Edit</a>'+' '+
@@ -141,16 +141,12 @@ $('#show_data_alumnus').on('click','.view_alumnus',function(){
       '<td>'+data.ttl+'</td>'+
       '</tr>'+
       '<tr>'+
-      '<td>'+'Status'+'</td>'+
-      '<td>'+data.status+'</td>'+
-      '</tr>'+
-      '<tr>'+
       '<td>'+'Alamat'+'</td>'+
       '<td>'+data.alamat+'</td>'+
       '</tr>'+
       '<tr>'+
       '<td>'+'Tahun Masuk Riptek'+'</td>'+
-      '<td>'+data.thn_masuk+'</td>'+
+      '<td>'+data.angkatan+'</td>'+
       '</tr>'+
       '<tr>'+
       '<td>'+'Motto'+'</td>'+
