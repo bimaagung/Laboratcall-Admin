@@ -120,7 +120,7 @@ class Page_alumni extends CI_Controller {
 		
 		$config['upload_path']          = './assets/img/';
 		$config['allowed_types']        = 'jpg|png';
-		$config['file_name']        	= time();
+		//$config['file_name']        	= time().'.jpg';
 		$config['file_ext']      		= '.jpg';
 
 
@@ -154,12 +154,15 @@ class Page_alumni extends CI_Controller {
 			'motto' => $this->input->post('motto'),
 			'pesan' => $this->input->post('pesan'),
 			'foto' => $this->upload->data('file_name')
+			//'foto' => $this->input->post('foto')
 			);
 
 		if( $id == '' ){
 			$this->m_alumnus->save_alumnus($data);
+			$this->session->set_flashdata('info','Data alumni berhasil diinput');
 		}else{
 			$this->m_alumnus->update_alumnus($data,$id);
+			$this->session->set_flashdata('info','Data alumni berhasil diupdate');
 		}
 
 		redirect('/admin/page_alumni/','refresh');

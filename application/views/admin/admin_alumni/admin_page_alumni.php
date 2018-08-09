@@ -1,7 +1,28 @@
+<script src="<?php echo base_url();?>assets/vendors/jGrowl/jquery.jgrowl.js"></script>
 <script src="<?php echo base_url();?>assets/vendors/jquery.min.js"></script>
+
+<script>
+   window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+  }, 2000);
+</script>
 <div class="span9" id="content">
 
  <div class="row-fluid">
+ <?php
+	$info = $this->session->flashdata('info');
+	if (isset($info))
+	{
+		?>
+		<div class="alert alert-success">
+      <!-- <button class="close" data-dismiss="alert">&times;</button> -->
+      <strong>Success!</strong> <?php echo $info; ?>.
+    </div>
+		<?php
+	}
+	?>
   <!-- block -->
   <div class="block">
     <div class="navbar navbar-inner block-header">
@@ -17,7 +38,7 @@
        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data_alumnus">
         <thead>
           <tr align="center">
-            <th style="text-align:center; width:8%;">No</th>
+            <th style="text-align:center; width:5%;">No</th>
             <th style="text-align:center;">Nama</th>
             <th style="text-align:center; width:20%;">Tahun Masuk Riptek</th>
             <th style="text-align:center;">Bidang di Riptek</th>
@@ -96,7 +117,7 @@
               var i;
               for(i=0; i<data.length; i++){
                 html += '<tr>'+
-                '<td>'+i+'</td>'+ 
+                '<td style="text-align:center;" >'+ [i+1] +'</td>'+ 
                 // '<td style="text-align:center;">'+ (i+1) +'</td>'+
                 '<td>'+data[i].nama+'</td>'+
                 '<td style="text-align:center;">'+data[i].angkatan+'</td>'+

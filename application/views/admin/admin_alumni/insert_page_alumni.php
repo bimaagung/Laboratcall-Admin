@@ -55,9 +55,8 @@
         <div class="span12">
           <form  method="post" action="<?php echo base_url();?>index.php/admin/page_alumni/save_alumnus" enctype="multipart/form-data" class="form-horizontal">
             <fieldset>
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-info" role="alert">
               <h4 class="alert-heading">Biodata Pribadi</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
             </div>
             <div class="control-group" style="margin-top:20px; margin-left:180px;" align="left">
                         <?php
@@ -181,14 +180,13 @@
               <div class="control-group">
                 <label class="control-label" for="textarea2">* Alamat</label>
                 <div class="controls">
-                  <textarea name="alamat" class="input-xlarge textarea" required placeholder="Enter text ..." style="width: 65%; height: 80px"><?php echo $alamat?></textarea>
+                  <textarea name="alamat" class="input-xlarge textarea" required placeholder="Enter text ..." style="width: 45%; height: 80px"><?php echo $alamat?></textarea>
                 </div>
               </div>
               <hr>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-info" role="alert">
               <h4 class="alert-heading">Pekerjaan</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            </div>
+              </div>
               <div class="control-group">
                 <label class="control-label" for="typeahead">Tempat Bekerja</label>
                 <div class="controls">
@@ -202,10 +200,9 @@
                   <input type="text" name="jabatan" id="typeahead" value="<?php echo $jabatan?>">
                 </div>
               </div>
-              <div class="alert alert-success" role="alert">
-              <h4 class="alert-heading">Studi Lanjut</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            </div>
+              <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading">Studi Lanjut</h4>
+              </div>
               <div class="control-group">
                 <label class="control-label" for="typeahead">Universitas</label>
                 <div class="controls">
@@ -230,13 +227,12 @@
               <div class="control-group">
                 <label class="control-label" for="typeahead">Semester</label>
                 <div class="controls">
-                  <input type="number" name="semester" id="typeahead" value="<?php echo $semester?>">
+                  <input type="number" class="span1" name="semester" id="typeahead" value="<?php echo $semester?>">
                 </div>
               </div>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-info" role="alert">
               <h4 class="alert-heading">Sosial Media</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            </div>
+              </div>
               <div class="control-group">
                 <label class="control-label" for="typeahead">Facebook</label>
                 <div class="controls">
@@ -279,10 +275,9 @@
                 </div>
               </div>
               <hr>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-info" role="alert">
               <h4 class="alert-heading">Motivasi</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            </div>
+              </div>
               <div class="control-group">
                 <label class="control-label" for="textarea2">* Motto</label>
                 <div class="controls">
