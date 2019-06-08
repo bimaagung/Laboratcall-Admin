@@ -15,8 +15,8 @@ class Login_admin extends CI_Controller {
             'action' => site_url('admin/login_admin/validation_admin'),
             'username' => set_value('username'),
             'password' => set_value('password'),
-            'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
-            'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
+           // 'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
+            //'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
         );
 		$this->load->view('admin/admin_login.php',$data);
 	}
@@ -33,12 +33,12 @@ class Login_admin extends CI_Controller {
         
         $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 		
-        $recaptcha = $this->input->post('g-recaptcha-response');
-        $response = $this->recaptcha->verifyResponse($recaptcha);
+       // $recaptcha = $this->input->post('g-recaptcha-response');
+       // $response = $this->recaptcha->verifyResponse($recaptcha);
  
-        if ($this->form_validation->run() == FALSE || !isset($response['success']) || $response['success'] <> true) {
-            $this->index();
-        } else {
+        // if ($this->form_validation->run() == FALSE || !isset($response['success']) || $response['success'] <> true) {
+        //     $this->index();
+        // } else {
             $username = $this->input->post('username');
 			$password = $this->input->post('password');
 
@@ -46,7 +46,7 @@ class Login_admin extends CI_Controller {
 			$password = htmlentities($password);
 
 			$this->m_login->m_validation_admin($username,$password);
-        }
+        // }
 
 	} 
 
@@ -64,7 +64,7 @@ class Login_admin extends CI_Controller {
 				'gender' => $this->input->post('gender'),
 				'username' => $this->input->post('username'),
 				'email' => $this->input->post('email'),
-				'password' => $this->encrypt->encode($password)
+				'password' => $this->encryption->encode($password)
 			);
 
 			$this->m_login->m_save_admin($data_admin);

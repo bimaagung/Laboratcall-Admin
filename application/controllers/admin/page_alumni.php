@@ -128,6 +128,7 @@ class Page_alumni extends CI_Controller {
 		$this->upload->do_upload('foto');
 
 		$id = $this->input->post('id');
+		$foto_load = 'http://localhost/silari-admin/assets/img/'.$this->upload->data('file_name');
 
 		$data = array(
 			'nama' => $this->input->post('nama'),
@@ -153,7 +154,8 @@ class Page_alumni extends CI_Controller {
 			'twitter' => $this->input->post('twitter'),
 			'motto' => $this->input->post('motto'),
 			'pesan' => $this->input->post('pesan'),
-			'foto' => $this->upload->data('file_name')
+			'foto' => $this->upload->data('file_name'),
+			'url_foto' => 'http://localhost/silari-admin/assets/img/'.$this->upload->data('file_name')
 			//'foto' => $this->input->post('foto')
 			);
 

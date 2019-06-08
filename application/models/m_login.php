@@ -4,7 +4,7 @@ class M_login extends CI_Model {
 	
     function m_save_admin($data_admin)
     {
-        $this->db->insert('admin_silari',$data_admin);
+        $this->db->insert('admin_laboratcall',$data_admin);
         $register_admin_silari = $this->db->affected_rows();
 
         if($register_admin_silari)
@@ -19,7 +19,7 @@ class M_login extends CI_Model {
     function m_validation_admin($username,$password)
     {
         $this->db->where('username',$username);
-        $usr_validation = $this->db->get('admin_silari');
+        $usr_validation = $this->db->get('admin_laboratcall');
         
         if($usr_validation->num_rows() >0)
 		{
@@ -28,24 +28,31 @@ class M_login extends CI_Model {
                             'id' => $row->id,
 							'nama' => $row->nama,
                             'username' => $row->username,
+                            'pasword'=> $row->password
                             );
-                $password_encrypt = $row->password;
-                $password_decrypt = $this->encrypt->decode($password_encrypt);
-			}
-            if($password == $password_decrypt)
-            {
+                // $password_encryption = $row->password;
+                // $password_decryption = $this->encrypt->decode($password_encryption);
                 $this->session->set_userdata($sess);
                 foreach ($usr_validation->result() as $row) {
                 $nama_admin = $row->nama;
                 $this->session->set_flashdata('username',$nama_admin);
                 }
                 redirect('admin/main_admin');
-            }
-            else
-            {
-                $this->session->set_flashdata('peringatan','Password salah, silahkan login lagi');
-			    redirect('admin/login_admin');
-            }
+			}
+            // if($password == $password_decryption)
+            // {
+            //     $this->session->set_userdata($sess);
+            //     foreach ($usr_validation->result() as $row) {
+            //     $nama_admin = $row->nama;
+            //     $this->session->set_flashdata('username',$nama_admin);
+            //     }
+            //     redirect('admin/main_admin');
+            // }
+            // else
+            // {
+            //     $this->session->set_flashdata('peringatan','Password salah, silahkan login lagi');
+			//     redirect('admin/login_admin');
+            // }
             
 		}else{
             $this->session->set_flashdata('peringatan','Username salah, silahkan login lagi');

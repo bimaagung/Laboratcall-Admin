@@ -9,8 +9,8 @@
     </div>
 
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#robotik">Anggota Robotik</a></li>
-      <li><a href="<?php echo base_url();?>index.php/admin/page_anggota/data_pti">Anggota PTI</a></li>
+      <li><a href="<?php echo base_url();?>index.php/admin/page_anggota">Anggota Robotik</a></li>
+      <li class="active"><a data-toggle="tab" href="#pti">Anggota PTI</a></li>
     </ul>
 
     <div class="tab-content">
@@ -19,17 +19,17 @@
             <div class="span12">
               <div class="table-toolbar">
                 <div class="btn-group">
-                <a  href="<?php echo base_url(); ?>index.php/admin/page_anggota/insert_anggota" class="btn">Tambah Anggota Robotik <i class="icon-plus"></i></a>
+                <a  href="<?php echo base_url(); ?>index.php/admin/page_anggota/insert_anggota" class="btn">Tambah Anggota PTI <i class="icon-plus"></i></a>
               </div>
             </div>
             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data_anggota">
               <thead>
                 <tr align="center">
-                  <th style="text-align:center;">NIM</th>
                   <th style="text-align:center;">Nama</th>
-                  <th style="text-align:center; width:20%;">Tahun Masuk Riptek</th>
-                  <th style="text-align:center;">Bidang di Riptek</th>
-                  <th style="text-align:center;">Action</th>
+                  <th style="text-align:center;">Jenis Kelamin</th>
+                  <th style="text-align:center; width:20%;">Tanggal Lahir</th>
+                  <th style="text-align:center;">Alamat</th>
+                  <th style="text-align:center;">Opsi</th>
                 </tr>
               </thead>
               <tbody id="show_data_anggota">

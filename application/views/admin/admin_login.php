@@ -14,7 +14,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="<?php echo base_url();?>assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <?php echo $script_captcha; // javascript recaptcha ?>
+    <?php //echo $script_captcha; // javascript recaptcha ?>
   </head>
   <body id="login">
     <div class="container">
@@ -39,9 +39,9 @@
             <div class="form-group">
                 <?php echo form_password('password', $password, 'class="form-control" required type="password" style="width:94%" placeholder="password"'); ?>
             </div>
-            <div class="form-group">
-                <?php echo $captcha // tampilkan recaptcha ?>
-            </div>
+            <!-- <div class="form-group">
+                <?php // echo $captcha // tampilkan recaptcha ?>
+            </div> -->
             <br>
             <div class="form-group">
                 <?php echo form_submit('login', 'login', 'class="btn btn-lg btn-block"'); ?>

@@ -4,16 +4,16 @@
             <a href="<?php echo base_url();?>index.php/admin/main_admin"><i class="icon-chevron-right"></i> Dashboard</a>
         </li>
         <li>
-            <a href="<?php echo base_url();?>index.php/admin/page_alumni"><i class="icon-chevron-right"></i> Alumni</a>
+            <a href="<?php echo base_url();?>index.php/admin/page_alumni"><i class="icon-chevron-right"></i> Pemeriksaan</a>
         </li>
         <li>
-            <a href="<?php echo base_url();?>index.php/admin/page_fungsionaris"><i class="icon-chevron-right"></i> Fungsionaris</a>
+            <a href="<?php echo base_url();?>index.php/admin/page_pengguna"><i class="icon-chevron-right"></i> Pengguna</a>
         </li>
         <li>
-            <a href="<?php echo base_url();?>index.php/admin/page_anggota"><i class="icon-chevron-right"></i> Anggota</a>
+            <a href="<?php echo base_url();?>index.php/admin/page_fungsionaris"><i class="icon-chevron-right"></i>Promo</a>
         </li>
         <li>
-            <a href="<?php echo base_url();?>index.php/admin/admin_user"><i class="icon-chevron-right"></i>List User Admin</a>
+            <a href="<?php echo base_url();?>index.php/admin/admin_user"><i class="icon-chevron-right"></i>Laboratorium Klinik</a>
         </li>
                         <!-- <li>
                             <a href="form.html"><i class="icon-chevron-right"></i> Forms</a>
