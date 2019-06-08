@@ -7,7 +7,10 @@
             <a href="<?php echo base_url();?>index.php/admin/page_alumni"><i class="icon-chevron-right"></i> Pemeriksaan</a>
         </li>
         <li>
-            <a href="<?php echo base_url();?>index.php/admin/page_pengguna"><i class="icon-chevron-right"></i> Pengguna</a>
+            <a href="<?php echo base_url();?>index.php/admin/page_pasien"><i class="icon-chevron-right"></i> Pasien</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url();?>index.php/admin/page_analis"><i class="icon-chevron-right"></i> Analis</a>
         </li>
         <li>
             <a href="<?php echo base_url();?>index.php/admin/page_fungsionaris"><i class="icon-chevron-right"></i>Promo</a>

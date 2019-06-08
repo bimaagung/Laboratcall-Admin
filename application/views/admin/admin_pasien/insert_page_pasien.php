@@ -67,7 +67,7 @@
           <?php
               }
           ?>
-          <form  method="post" action="<?php echo base_url();?>index.php/admin/page_pengguna/save_pasien" enctype="multipart/form-data" class="form-horizontal">
+          <form  method="post" action="<?php echo base_url();?>index.php/admin/page_pasien/save_pasien" enctype="multipart/form-data" class="form-horizontal">
             <fieldset>
           <div class="control-group" style="margin-top:50px;" align="center">
                     <?php
@@ -163,7 +163,7 @@
               <hr>
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a type="button" class="btn" href="<?php echo base_url(); ?>index.php/admin/page_pengguna">Kembali</a>
+                <a type="button" class="btn" href="<?php echo base_url(); ?>index.php/admin/page_pasien">Kembali</a>
               </div>
             </fieldset>
           </form>

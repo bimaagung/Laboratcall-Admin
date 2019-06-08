@@ -1,30 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page_pengguna extends CI_Controller {
+class Page_pasien extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model("m_pengguna");
+		$this->load->model("m_pasien");
 		// $this->load->model("m_secure");
 		// $this->m_secure->secure();
 	}
 
 	function index()
 	{
-		$content['main_content'] = 'admin/pengguna/admin_pasien.php';
-		$this->load->view('admin/dashboard.php',$content);
-	}
-
-	function data_pti()
-	{
-		$content['main_content'] = 'admin/admin_anggota/admin_page_anggota_pti.php';
+		$content['main_content'] = 'admin/admin_pasien/admin_pasien.php';
 		$this->load->view('admin/dashboard.php',$content);
 	}
 
 	function get_pasien_ajax()
 	{	
-		$list_pasien = $this->m_pengguna->get_pasien();
+		$list_pasien = $this->m_pasien->get_pasien();
 		echo json_encode($list_pasien);
 		
 	}
@@ -32,7 +26,7 @@ class Page_pengguna extends CI_Controller {
 	function get_pasien_byid_ajax()
 	{	
 		$id = $this->input->get('id');
-		$list_pasien_byid = $this->m_pengguna->get_pasien_by($id);
+		$list_pasien_byid = $this->m_pasien->get_pasien_by($id);
 		echo json_encode($list_pasien_byid);
 		
 	}
@@ -40,23 +34,17 @@ class Page_pengguna extends CI_Controller {
 	function delete_pasien()
 	{	
 		$id = $this->uri->segment(4);  
-		$this->m_pengguna->get_pasien_delete($id);
+		$this->m_pasien->get_pasien_delete($id);
 		$this->session->set_flashdata('konfirmasi','Data pasien berhasil dihapus');
-		redirect('/admin/page_pengguna/','refresh');
+		redirect('/admin/page_pasien/','refresh');
 		
-	}
-
-	function add_anggota()
-	{
-		$content['main_content'] = 'admin/admin_anggota/insert_page_anggota.php';
-		$this->load->view('admin/dashboard.php',$content);
 	}
 
 	function insert_pasien(){
 		$id = $this->uri->segment(4);
 		$data = array();
 		if(isset($id)){
-		$row = $this->m_pengguna->get_pasien_by($id);
+		$row = $this->m_pasien->get_pasien_by($id);
 
 		$tgl_lahir = $row->tanggal_lahir;
 		$inittgl_lahir = date_create($tgl_lahir);
@@ -73,7 +61,7 @@ class Page_pengguna extends CI_Controller {
 						'password' =>  $row->password,
 						'retype_password' =>  $row->password,
 						'foto' =>  $row->foto,
-						'main_content' => 'admin/pengguna/insert_page_pasien.php'
+						'main_content' => 'admin/admin_pasien/insert_page_pasien.php'
 						);
 		
 		}else{
@@ -89,7 +77,7 @@ class Page_pengguna extends CI_Controller {
 						'password' => '',
 						'retype_password' => '',
 						'foto' => '',
-						'main_content' => 'admin/pengguna/insert_page_pasien.php'
+						'main_content' => 'admin/admin_pasien/insert_page_pasien.php'
 						);	
 		}
 
@@ -141,18 +129,18 @@ class Page_pengguna extends CI_Controller {
 				);
 	
 			if( $id == '' ){
-				$this->m_pengguna->save_pasien($data);
+				$this->m_pasien->save_pasien($data);
 				$this->session->set_flashdata('konfirmasi','Data pasien berhasil ditambah');
-				redirect('/admin/page_pengguna/','refresh');
+				redirect('/admin/page_pasien/','refresh');
 			}else{
-				$this->m_pengguna->update_pasien($data,$id);
+				$this->m_pasien->update_pasien($data,$id);
 				$this->session->set_flashdata('konfirmasi','Data pasien berhasil diupdate');
-				redirect('/admin/page_pengguna/','refresh');
+				redirect('/admin/page_pasien/','refresh');
 			}
 	
 		}else{
 			$this->session->set_flashdata('peringatan','Password tidak sesuai, silahkan ulangi');
-			redirect('/admin/page_pengguna/insert_pasien/'.$id,'refresh');
+			redirect('/admin/page_pasien/insert_pasien/'.$id,'refresh');
 		}
 
 	}

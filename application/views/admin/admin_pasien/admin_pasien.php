@@ -37,7 +37,7 @@
             
               <div class="table-toolbar">
                 <div class="btn-group">
-                <a  href="<?php echo base_url(); ?>index.php/admin/page_pengguna/insert_pasien" class="btn">Tambah Pasien <i class="icon-plus"></i></a>
+                <a  href="<?php echo base_url(); ?>index.php/admin/page_pasien/insert_pasien" class="btn">Tambah Pasien <i class="icon-plus"></i></a>
               </div>
             </div>
             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="data_pasien">
@@ -118,7 +118,7 @@
 
           $.ajax({
             type  : 'ajax',
-            url   : '<?php echo base_url()?>index.php/admin/page_pengguna/get_pasien_ajax',
+            url   : '<?php echo base_url()?>index.php/admin/page_pasien/get_pasien_ajax',
             async : false,
             dataType : 'json',
             success : function(data){
@@ -126,19 +126,20 @@
               var i;
               for(i=0; i<data.length; i++){
                 html += '<tr>'+
-                '<td style="text-align:center;">'+ (i+1) +'</td>'+
+                '<td style="text-align:center; width:7%;">'+ (i+1) +'</td>'+
                 '<td>'+data[i].nama+'</td>'+
-                '<td style="text-align:center;">'+data[i].jenis_kelamin+'</td>'+
+                '<td style="text-align:center; width:12%;">'+data[i].jenis_kelamin+'</td>'+
                 '<td style="text-align:center;">'+data[i].tmp_lahir+' ,'+data[i].tanggal_lahir+'</td>'+ 
                 '<td style="text-align:center;">'+data[i].alamat+'</td>'+ 
                 '<td style="text-align:center;">'+
                 // '<a href="javascript:void(0);" class="btn view_anggota" data="'+data[i].id+'">View</a>'+' '+
-                '<a href="<?php echo base_url();?>index.php/admin/page_pengguna/insert_pasien/'+data[i].id+'">Edit</a>'+' '+
+                '<a href="<?php echo base_url();?>index.php/admin/page_pasien/insert_pasien/'+data[i].id+'">Edit</a>'+' '+
                 '<span style="color:#C7C7C7">|</span>'+' '+                
-                '<a href="<?php echo base_url();?>index.php/admin/page_pengguna/delete_pasien/'+data[i].id+'">Hapus</a>'+
+                '<a href="javascript:void(0);" class="delete_pasien" data="'+data[i].id+'">Hapus</a>'+
                 '</td>'+
                 '</tr>';
               }
+              
               $('#view_data_pasien').html(html);
             }
           });
@@ -154,7 +155,7 @@ $('#view_data_pasien').on('click','.delete_pasien',function(){
   var id=$(this).attr('data');
   $.ajax({
     type : "GET",
-    url  : "<?php echo base_url()?>index.php/admin/page_pengguna/get_pasien_byid_ajax",
+    url  : "<?php echo base_url()?>index.php/admin/page_pasien/get_pasien_byid_ajax",
     dataType : "JSON",
     data : {id:id},
     success: function(data){
@@ -162,8 +163,10 @@ $('#view_data_pasien').on('click','.delete_pasien',function(){
      $.each(data,function(){
        
       html = 'Apakah anda yakin ingin menghapus '+data.nama+' ?';
-      html_button =   '<a href="javascript:void(0);" class="btn view_anggota" onclick="delete_pasien('+data.id+')" data-dismiss="modal">Delete</a>'+
-                      '<a class="btn delete_anggota" data-dismiss="modal">Cencel</a>';
+      html_button =   
+      '<a class="btn delete_anggota" data-dismiss="modal">Cencel</a>'+
+      '<a href="<?php echo base_url();?>index.php/admin/page_pasien/delete_pasien/'+data.id+'" class="btn view_anggota">Delete</a>';
+                      
 
     });
 

@@ -1,6 +1,6 @@
 <?php  
  
-class M_pengguna extends CI_Model {
+class M_pasien extends CI_Model {
 	
 
 	function get_pasien(){
